@@ -34,3 +34,16 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+.DS_Store
+.idea/.idea.xasset-v2/.idea/contentModel.xml
+.idea/.idea.xasset-v2/riderModule.iml
+.idea/.idea.xasset-v2/.idea/workspace.xml
+.idea/.idea.xasset-v2/.idea/vcs.xml
+.idea/.idea.xasset-v2/.idea/modules.xml
+.idea/.idea.xasset-v2/.idea/misc.xml
+.idea/.idea.xasset-v2/.idea/indexLayout.xml
+.idea/.idea.xasset-v2/.idea/encodings.xml
+Assets/Plugins/Editor.meta
+Assets/Plugins/Editor/JetBrains.meta
+Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
+Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta
