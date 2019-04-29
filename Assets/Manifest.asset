@@ -13,5 +13,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downloadURL: 
   activeVariants: []
-  bundles: []
-  assets: []
+  bundles:
+  - prefabs\uiroot
+  - scenes\test
+  - prefabs\uiroot2
+  - sprites\unitylogo
+  - manifest
+  dirs:
+  - Assets/Plugins/XAsset/Demo/Prefabs
+  - Assets/Plugins/XAsset/Demo/Scenes
+  - Assets/Plugins/XAsset/Demo/Sprites
+  - Assets
+  assets:
+  - variant: -1
+    bundle: 0
+    dir: 0
+    name: UIRoot.prefab
+  - variant: -1
+    bundle: 1
+    dir: 1
+    name: Test.unity
+  - variant: -1
+    bundle: 2
+    dir: 0
+    name: UIRoot2.prefab
+  - variant: -1
+    bundle: 3
+    dir: 2
+    name: UnityLogo.png
+  - variant: -1
+    bundle: 4
+    dir: 3
+    name: Manifest.asset

@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 685612021
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scenes/test
+      Dependencies: {}
+    Info_1:
+      Name: sprites/unitylogo
+      Dependencies: {}
+    Info_2:
+      Name: prefabs/uiroot
+      Dependencies:
+        Dependency_0: sprites/unitylogo
+    Info_3:
+      Name: prefabs/uiroot2
+      Dependencies:
+        Dependency_0: sprites/unitylogo
+    Info_4:
+      Name: manifest
+      Dependencies: {}

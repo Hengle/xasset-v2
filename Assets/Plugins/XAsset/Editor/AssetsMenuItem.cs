@@ -34,8 +34,7 @@ namespace Plugins.XAsset.Editor
     {
         private const string KMarkAssetsWithDir = "Assets/AssetBundles/按目录标记";
         private const string KMarkAssetsWithFile = "Assets/AssetBundles/按文件标记";
-        private const string KMarkAssetsWithName = "Assets/AssetBundles/按名称标记";
-        private const string KClearAssets = "Assets/AssetBundles/清理标记";
+        private const string KMarkAssetsWithName = "Assets/AssetBundles/按名称标记"; 
         private const string KBuildManifest = "Assets/AssetBundles/生成配置";
         private const string KBuildAssetBundles = "Assets/AssetBundles/生成資源包";
         private const string KBuildPlayer = "Assets/AssetBundles/生成播放器";
@@ -88,12 +87,9 @@ namespace Plugins.XAsset.Editor
                 if (Directory.Exists(path))
                     continue;
                 if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, path, i * 1f / assets.Length))
-                    break;
-                var importer = AssetImporter.GetAtPath(path);
-                if (importer == null)
-                    continue;
+                    break; 
                 var assetBundleName = Path.GetDirectoryName(path) + "_g";
-                importer.assetBundleName = TrimedAssetBundleName(assetBundleName);
+                BuildScript.SetAssetBundleNameAndVariant(path, assetBundleName.ToLower(), null);
             }
 
             EditorUtility.ClearProgressBar();
@@ -110,11 +106,8 @@ namespace Plugins.XAsset.Editor
                 if (Directory.Exists(path))
                     continue;
                 if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, path, i * 1f / assets.Length))
-                    break;
-                var importer = AssetImporter.GetAtPath(path);
-                if (importer == null)
-                    continue;
-
+                    break;  
+                
                 var dir = Path.GetDirectoryName(path);
                 var name = Path.GetFileNameWithoutExtension(path);
                 if (dir == null)
@@ -122,8 +115,8 @@ namespace Plugins.XAsset.Editor
                 if (name == null)
                     continue;
 
-                var assetBundleName = Path.Combine(dir, name);
-                importer.assetBundleName = TrimedAssetBundleName(assetBundleName);
+                var assetBundleName = TrimedAssetBundleName(Path.Combine(dir, name));
+                BuildScript.SetAssetBundleNameAndVariant(path, assetBundleName.ToLower(), null); 
             }
 
             EditorUtility.ClearProgressBar();
@@ -140,31 +133,13 @@ namespace Plugins.XAsset.Editor
                 if (Directory.Exists(path))
                     continue;
                 if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, path, i * 1f / assets.Length))
-                    break;
-                var importer = AssetImporter.GetAtPath(path);
-                if (importer == null)
-                    continue;
+                    break; 
                 var assetBundleName = Path.GetFileNameWithoutExtension(path);
-                importer.assetBundleName = assetBundleName;
-            }
+                BuildScript.SetAssetBundleNameAndVariant(path, assetBundleName.ToLower(), null);  
+            } 
 
             EditorUtility.ClearProgressBar();
-        }
-
-        [MenuItem(KClearAssets)]
-        private static void ClearAssets()
-        {
-            var assetBundles = AssetDatabase.GetAllAssetBundleNames();
-            for (var i = 0; i < assetBundles.Length; i++)
-            {
-                var item = assetBundles[i];
-                if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, item, i * 1f / assetBundles.Length))
-                    break;
-                AssetDatabase.RemoveAssetBundleName(item, true);
-            }
-
-            EditorUtility.ClearProgressBar();
-        }
+        } 
 
         [MenuItem(KBuildManifest)]
         private static void BuildManifest()

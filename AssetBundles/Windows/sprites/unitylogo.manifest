@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3932747640
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 20f73952ed7dd8305491057731ae9c3a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 21f0dc8ebad690f009368069428e0a1a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Plugins/XAsset/Demo/Sprites/UnityLogo.png
+Dependencies: []

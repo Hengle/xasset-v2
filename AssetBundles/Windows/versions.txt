@@ -1,0 +1,5 @@
+manifest:65e7f8600a964721fa21dc94bdf5e332
+prefabs/uiroot:ca36aec1e46f7a02f8e28a724ad5cc5f
+prefabs/uiroot2:fcd85b09a64579b824f9808261190dba
+scenes/test:80de3f2525f1640c8b7f15fba23067a8
+sprites/unitylogo:20f73952ed7dd8305491057731ae9c3a
