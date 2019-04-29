@@ -110,8 +110,14 @@ Email: jiyuan.feng@live.com
 QQ-group: 693203087
 
 ## 贡献成员
-
+- oucfeng
+- wl-666
+- 3085765
+- CatImmortal
+- 308586216@qq.com
 
 ## 支付宝捐赠
 
 ![donate](./donate.jpg)
+
+主要用来组织和开展线下交流活动
