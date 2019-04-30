@@ -79,12 +79,14 @@ namespace Plugins.XAsset
                         {
                             if (string.IsNullOrEmpty(Utility.downloadURL)) Utility.downloadURL = manifest.downloadURL;
                             Bundles.activeVariants = manifest.activeVariants;
-                            _bundles = manifest.bundles;
+                            _bundles = manifest.bundles; 
+							var dirs = manifest.dirs;
+
                             _bundleAssets = new Dictionary<string, int>(manifest.assets.Length);
                             for (int i = 0, max = manifest.assets.Length; i < max; i++)
                             {
                                 var item = manifest.assets[i];
-                                _bundleAssets[item.name] = item.bundle;
+								_bundleAssets [string.Format ("{0}/{1}", dirs [item.dir], item.name)] = item.bundle;
                             }
                         }
 
